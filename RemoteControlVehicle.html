@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Remote Control Vehicle</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Hero / Title -->
+  <header class="min-h-[40vh] flex items-center justify-center bg-white">
+    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-center">
+      Remote Control Vehicle
+    </h1>
+  </header>
+
+  <main class="container mx-auto px-6 py-12">
+
+    <!-- Overview -->
+    <section class="mb-12">
+      <h2 class="text-2xl md:text-3xl font-semibold mb-4">Overview</h2>
+      <p class="text-gray-700 leading-relaxed max-w-3xl">
+        A three-speed remote control vehicle featuring an automatic transmission (low, high, reverse)
+        on a pickup-style chassis. The project explores mechanical design, linkage geometry, drivetrain
+        efficiency, and closed-loop control for smooth gear changes under varying loads.
+      </p>
+    </section>
+
+    <!-- Gallery -->
+    <section class="mb-12">
+      <h2 class="text-2xl md:text-3xl font-semibold mb-4">Gallery</h2>
+      <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        <img src="../assets/remote_car_1.jpg" alt="Remote Control Vehicle view 1" class="w-full h-56 object-cover rounded-lg shadow"/>
+        <img src="../assets/remote_car_2.jpg" alt="Remote Control Vehicle view 2" class="w-full h-56 object-cover rounded-lg shadow"/>
+        <img src="../assets/remote_car_3.jpg" alt="Remote Control Vehicle view 3" class="w-full h-56 object-cover rounded-lg shadow"/>
+      </div>
+      <!-- Tip: place remote_car_1.jpg, remote_car_2.jpg, remote_car_3.jpg in /assets -->
+    </section>
+
+    <!-- What / How / Results -->
+    <section class="grid gap-8 grid-cols-1 md:grid-cols-3">
+      <div class="bg-white rounded-xl shadow p-6">
+        <h3 class="text-xl font-bold mb-3">What</h3>
+        <p class="text-gray-700">
+          A compact RC platform with a dog-clutch, servo-driven transmission enabling multiple gear ratios.
+          Emphasis on robust drivetrain, serviceability, and reliable shifting.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow p-6">
+        <h3 class="text-xl font-bold mb-3">How</h3>
+        <p class="text-gray-700">
+          CAD for gearbox and linkages; fabricated components; tuned servo actuation and throttle ramps;
+          implemented controller logic for shift timing; logged runs for efficiency and speed tests.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow p-6">
+        <h3 class="text-xl font-bold mb-3">Results</h3>
+        <p class="text-gray-700">
+          Achieved consistent shifts with minimal slip; validated torque handling across ratios; improved
+          lap consistency and top speed; identified next steps for weight reduction and gearing optimization.
+        </p>
+      </div>
+    </section>
+
+    <!-- Back link -->
+    <div class="mt-12">
+      <a href="/" class="text-blue-600 hover:underline">&larr; Back to Projects</a>
+    </div>
+
+  </main>
+
+  <footer class="bg-gray-200 py-6 mt-16">
+    <div class="container mx-auto px-6 text-center text-gray-600">
+      © 2025 Suchir Sumant. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>
