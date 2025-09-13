@@ -43,26 +43,29 @@
       <div class="bg-white rounded-xl shadow p-6">
         <h3 class="text-xl font-bold mb-3">What</h3>
         <p class="text-gray-700">
-          A ring-shaped mobile platform used to study balance, traction, and motion profiles
-          across surfaces. Focus on modular hardware and reproducible tests.
+          The goal was to re-engineer the Ringbot's mechanical structure and create a fully functional 
+          protptype capable of navigating diverse terrains.
         </p>
       </div>
 
       <div class="bg-white rounded-xl shadow p-6">
         <h3 class="text-xl font-bold mb-3">How</h3>
         <p class="text-gray-700">
-          Implemented microcontroller-based control, motor drivers, encoder feedback,
-          IMU fusion for attitude estimation, and PID/trajectory controllers. Logged data
-          via serial to Python for analysis and plots.
+          Mechanical Work: Designed and fabricated Ringbot's components utilizing SolidWorks and 3D Printing.
+          Redesigned legs to accomadate four LiPo batteries and reprinted parts to improve fit and strenght. 
+          Assembly & Wiring: Integrated Dynamixel XM430 motors and soldered extensive wiring. Connected motors
+          to a Raspberry Pi Zero 2W running Ubuntu 22.04 and ROS2 Humble.
+          Software and Control: Robot was imported into MATLAB/Simulink and then simulated in Simscape Multibody.
+          Trained RL agents to control standing and locomtion. 
         </p>
       </div>
 
       <div class="bg-white rounded-xl shadow p-6">
         <h3 class="text-xl font-bold mb-3">Results</h3>
         <p class="text-gray-700">
-          Demonstrated stable step responses and repeatable path tracking.
-          Identified control gains and friction conditions that minimize steady-state error
-          and overshoot; established a baseline for future ML-assisted tuning.
+          Completed full assembly of robot with integrated leg and wheel modulues, successfully
+          wired and connected all motors and sensors to Raspberry Pi, enabeling remote communications with 
+          delays as low as ~6-7ms
         </p>
       </div>
     </section>
