@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The RingBot</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Hero / Title -->
+  <header class="min-h-[40vh] flex items-center justify-center bg-white">
+    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-center">
+      The RingBot
+    </h1>
+  </header>
+
+  <main class="container mx-auto px-6 py-12">
+
+    <!-- Overview -->
+    <section class="mb-12">
+      <h2 class="text-2xl md:text-3xl font-semibold mb-4">Overview</h2>
+      <p class="text-gray-700 leading-relaxed max-w-3xl">
+        RingBot is a motion-control platform exploring ring-shaped locomotion and
+        stability. The system integrates embedded control, motor drivers, IMU feedback,
+        and closed-loop trajectory tracking to evaluate multi-axis dynamics in a compact form factor.
+      </p>
+    </section>
+
+    <!-- Gallery -->
+    <section class="mb-12">
+      <h2 class="text-2xl md:text-3xl font-semibold mb-4">Gallery</h2>
+      <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        <img src="../assets/ringbot_1.jpg" alt="RingBot view 1" class="w-full h-56 object-cover rounded-lg shadow"/>
+        <img src="../assets/ringbot_2.jpg" alt="RingBot view 2" class="w-full h-56 object-cover rounded-lg shadow"/>
+        <img src="../assets/ringbot_3.jpg" alt="RingBot view 3" class="w-full h-56 object-cover rounded-lg shadow"/>
+      </div>
+      <!-- Tip: place ringbot_1.jpg, ringbot_2.jpg, ringbot_3.jpg in /assets -->
+    </section>
+
+    <!-- What / How / Results -->
+    <section class="grid gap-8 grid-cols-1 md:grid-cols-3">
+      <div class="bg-white rounded-xl shadow p-6">
+        <h3 class="text-xl font-bold mb-3">What</h3>
+        <p class="text-gray-700">
+          A ring-shaped mobile platform used to study balance, traction, and motion profiles
+          across surfaces. Focus on modular hardware and reproducible tests.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow p-6">
+        <h3 class="text-xl font-bold mb-3">How</h3>
+        <p class="text-gray-700">
+          Implemented microcontroller-based control, motor drivers, encoder feedback,
+          IMU fusion for attitude estimation, and PID/trajectory controllers. Logged data
+          via serial to Python for analysis and plots.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow p-6">
+        <h3 class="text-xl font-bold mb-3">Results</h3>
+        <p class="text-gray-700">
+          Demonstrated stable step responses and repeatable path tracking.
+          Identified control gains and friction conditions that minimize steady-state error
+          and overshoot; established a baseline for future ML-assisted tuning.
+        </p>
+      </div>
+    </section>
+
+    <!-- Back link -->
+    <div class="mt-12">
+      <a href="/" class="text-blue-600 hover:underline">&larr; Back to Projects</a>
+    </div>
+
+  </main>
+
+  <footer class="bg-gray-200 py-6 mt-16">
+    <div class="container mx-auto px-6 text-center text-gray-600">
+      © 2025 Suchir Sumant. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>
