@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spaceship Rope Crawler</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Hero / Title -->
+  <header class="min-h-[40vh] flex items-center justify-center bg-white">
+    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-center">
+      Spaceship Rope Crawler
+    </h1>
+  </header>
+
+  <main class="container mx-auto px-6 py-12">
+
+    <!-- Overview -->
+    <section class="mb-12">
+      <h2 class="text-2xl md:text-3xl font-semibold mb-4">Overview</h2>
+      <p class="text-gray-700 leading-relaxed max-w-3xl">
+        A compact mechanism inspired by spacecraft servicing systems, designed to traverse a
+        tensioned line with secure gripping and controlled advance. Focus areas include drive
+        geometry, load transfer, and control strategies for smooth motion and reliable holding.
+      </p>
+    </section>
+
+    <!-- Gallery -->
+    <section class="mb-12">
+      <h2 class="text-2xl md:text-3xl font-semibold mb-4">Gallery</h2>
+      <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        <img src="../assets/rope_crawler_1.jpg" alt="Rope Crawler view 1" class="w-full h-56 object-cover rounded-lg shadow"/>
+        <img src="../assets/rope_crawler_2.jpg" alt="Rope Crawler view 2" class="w-full h-56 object-cover rounded-lg shadow"/>
+        <img src="../assets/rope_crawler_3.jpg" alt="Rope Crawler view 3" class="w-full h-56 object-cover rounded-lg shadow"/>
+      </div>
+      <!-- Tip: place rope_crawler_1.jpg, rope_crawler_2.jpg, rope_crawler_3.jpg in /assets -->
+    </section>
+
+    <!-- What / How / Results -->
+    <section class="grid gap-8 grid-cols-1 md:grid-cols-3">
+      <div class="bg-white rounded-xl shadow p-6">
+        <h3 class="text-xl font-bold mb-3">What</h3>
+        <p class="text-gray-700">
+          A line-traversing robot that grips and advances along a rope for inspection or
+          transport tasks. Emphasis on grip reliability, weight, and modularity.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow p-6">
+        <h3 class="text-xl font-bold mb-3">How</h3>
+        <p class="text-gray-700">
+          Designed cam/roller or toothed-drive interfaces, tested different grip materials,
+          modeled load paths, and tuned motor control for smooth starts, stops, and slope
+          transitions. Logged performance metrics for pull force and slip thresholds.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow p-6">
+        <h3 class="text-xl font-bold mb-3">Results</h3>
+        <p class="text-gray-700">
+          Achieved consistent forward motion under varying rope tension, reduced slip events,
+          and validated a control envelope for reliable traversal. Identified improvements for
+          lighter chassis and faster serviceability.
+        </p>
+      </div>
+    </section>
+
+    <!-- Back link -->
+    <div class="mt-12">
+      <a href="/" class="text-blue-600 hover:underline">&larr; Back to Projects</a>
+    </div>
+
+  </main>
+
+  <footer class="bg-gray-200 py-6 mt-16">
+    <div class="container mx-auto px-6 text-center text-gray-600">
+      © 2025 Suchir Sumant. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>
