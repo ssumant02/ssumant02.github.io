@@ -1,86 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sandia Labs: Counterfeit Bolt Detection</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-50 text-gray-800">
+<!-- Proposed Design -->
+<section class="mb-12">
+  <h2 class="text-2xl md:text-3xl font-semibold mb-4">Proposed Design</h2>
+  <p class="text-gray-700 leading-relaxed max-w-3xl mb-6">
+    Our design integrates <strong>optical imaging</strong> with a mechanical system to capture multiple bolt views
+    while also measuring basic physical properties.
+  </p>
 
-  <!-- Hero -->
-  <header class="bg-white">
-    <div class="container mx-auto px-6 py-16 flex flex-col items-center text-center">
-      <img src="../assets/Sandia_National_Laboratories_logo.jpeg" alt="Sandia National Laboratories" class="h-20 w-auto mb-6 object-contain" />
-      <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight">Sandia Labs: Counterfeit Bolt Detection</h1>
-      <p class="mt-4 text-gray-600 max-w-3xl">
-        Detecting counterfeit fasteners using imaging and machine learning.
-      </p>
-    </div>
-  </header>
+  <ul class="list-disc pl-5 space-y-2 text-gray-700 max-w-3xl mb-8">
+    <li><strong>Optical Inspection:</strong> Bolts are placed on a motorized turntable, and two fixed cameras
+    capture head markings, threads, and shank geometry under controlled lighting. Image data feeds into a
+    computer vision pipeline, where a pretrained CNN extracts feature maps and an anomaly detection algorithm
+    (PaDiM) compares them to authentic bolt distributions.</li>
 
-  <main class="container mx-auto px-6 py-12">
+    <li><strong>Non-Optical Tests:</strong> A digital scale measures weight, a magnetic probe detects alloy
+    variations, and resistance is recorded to catch abnormal compositions. These values are compared against
+    baselines established from authentic bolts.</li>
 
-    <!-- Overview -->
-    <section class="mb-12">
-      <h2 class="text-2xl md:text-3xl font-semibold mb-4">Overview</h2>
-      <p class="text-gray-700 leading-relaxed max-w-3xl">
-        Counterfeit bolts pose serious risks in aerospace, defense, and industrial supply chains. They can look
-        identical to authentic parts but often fail due to poor materials, improper heat treatment, or missing/false
-        markings. Current detection methods are either destructive, inconsistent, or too costly for scalable use.
-        Our project aims to create a <strong>nondestructive, portable system</strong> that combines optical inspection
-        with simple non-optical tests (weight, resistance, magnetism) to reliably detect counterfeit bolts. The system
-        must remain lightweight, compact, and able to evaluate a bolt in minutes.
-      </p>
-    </section>
+    <li><strong>Mechanical Structure:</strong> The setup uses T-slotted framing for modularity, stepper motors
+    for bolt rotation, and Raspberry Pi–based control with external cameras. The entire system fits within a
+    <em>12” × 12” × 12” cube</em> and weighs under <em>12 lbs</em>, meeting project constraints.</li>
+  </ul>
 
-    <!-- Proposed Design -->
-    <section class="mb-12">
-      <h2 class="text-2xl md:text-3xl font-semibold mb-4">Proposed Design</h2>
-      <p class="text-gray-700 leading-relaxed max-w-3xl mb-6">
-        Our design integrates <strong>optical imaging</strong> with a mechanical system to capture multiple bolt views
-        while also measuring basic physical properties.
-      </p>
-
-      <ul class="list-disc pl-5 space-y-2 text-gray-700 max-w-3xl">
-        <li><strong>Optical Inspection:</strong> Bolts are placed on a motorized turntable, and two fixed cameras
-        capture head markings, threads, and shank geometry under controlled lighting. Image data feeds into a
-        computer vision pipeline, where a pretrained CNN extracts feature maps and an anomaly detection algorithm
-        (PaDiM) compares them to authentic bolt distributions.</li>
-
-        <li><strong>Non-Optical Tests:</strong> A digital scale measures weight, a magnetic probe detects alloy
-        variations, and resistance is recorded to catch abnormal compositions. These values are compared against
-        baselines established from authentic bolts.</li>
-
-        <li><strong>Mechanical Structure:</strong> The setup uses T-slotted framing for modularity, stepper motors
-        for bolt rotation, and Raspberry Pi–based control with external cameras. The entire system fits within a
-        <em>12” × 12” × 12” cube</em> and weighs under <em>12 lbs</em>, meeting project constraints.</li>
-      </ul>
-    </section>
-
-    <!-- Future Work -->
-    <section class="mb-12">
-      <h2 class="text-2xl md:text-3xl font-semibold mb-4">Future Work</h2>
-      <ul class="list-disc pl-5 space-y-2 text-gray-700 max-w-3xl">
-        <li>Collect larger, labeled datasets spanning multiple grades, finishes, and manufacturers.</li>
-        <li>Fine-tune the CNN + anomaly detection pipeline for higher accuracy and lower false negatives.</li>
-        <li>Integrate real-time classification on the Raspberry Pi or a lightweight GPU board (e.g., Jetson).</li>
-        <li>Improve mechanical reliability of the turntable and screw-holding system for repeatable imaging.</li>
-        <li>Design a user interface that clearly outputs pass/fail results with traceable test data.</li>
-      </ul>
-    </section>
-
-    <!-- Back link -->
-    <div class="mt-12">
-      <a href="/" class="text-blue-600 hover:underline">&larr; Back to Projects</a>
-    </div>
-
-  </main>
-
-  <footer class="bg-gray-200 py-6 mt-16">
-    <div class="container mx-auto px-6 text-center text-gray-600">
-      © 2025 Suchir Sumant. All rights reserved.
-    </div>
-  </footer>
-</body>
-</html>
+  <!-- Proposed Design Image Card -->
+  <div class="bg-white rounded-xl shadow p-6 max-w-md mx-auto">
+    <img src="../assets/bolt_detector_design.jpg" alt="Proposed Bolt Detection System" class="w-full h-64 object-contain mb-4"/>
+    <p class="text-gray-600 text-center">Proposed design of the counterfeit bolt detection system</p>
+  </div>
+</section>
