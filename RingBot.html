@@ -21,9 +21,9 @@
     <section class="mb-12">
       <h2 class="text-2xl md:text-3xl font-semibold mb-4">Overview</h2>
       <p class="text-gray-700 leading-relaxed max-w-3xl">
-        RingBot is a motion-control platform exploring ring-shaped locomotion and
-        stability. The system integrates embedded control, motor drivers, IMU feedback,
-        and closed-loop trajectory tracking to evaluate multi-axis dynamics in a compact form factor.
+     The RingBot is a robot that combines the strengths of wheeled and legged locomotion using a large monocycle frame with two 3-DoF legs. 
+        The project focused on re-engineering the design and optimizing its motion control system to improve balance, navigation, and adaptability across varied 
+        terrains.
       </p>
     </section>
 
@@ -43,29 +43,31 @@
       <div class="bg-white rounded-xl shadow p-6">
         <h3 class="text-xl font-bold mb-3">What</h3>
         <p class="text-gray-700">
-          The goal was to re-engineer the Ringbot's mechanical structure and create a fully functional 
-          protptype capable of navigating diverse terrains.
+        Our objective was to rebuild the RingBot with improved mechanical and control systems. Key goals included:
+	      •	Completing mechanical redesigns to fit new batteries and improve stability.
+	      •	Fully assembling and wiring the wheel, legs, and drive modules.
+	      •	Developing low-level motor controllers and reinforcement learning agents for locomotion.
+	      •	Ensuring smooth communication between onboard hardware and external devices.
         </p>
       </div>
 
       <div class="bg-white rounded-xl shadow p-6">
         <h3 class="text-xl font-bold mb-3">How</h3>
         <p class="text-gray-700">
-          Mechanical Work: Designed and fabricated Ringbot's components utilizing SolidWorks and 3D Printing.
-          Redesigned legs to accomadate four LiPo batteries and reprinted parts to improve fit and strenght. 
-          Assembly & Wiring: Integrated Dynamixel XM430 motors and soldered extensive wiring. Connected motors
-          to a Raspberry Pi Zero 2W running Ubuntu 22.04 and ROS2 Humble.
-          Software and Control: Robot was imported into MATLAB/Simulink and then simulated in Simscape Multibody.
-          Trained RL agents to control standing and locomtion. 
+         We redesigned and 3D-printed components in SolidWorks, reinforced the frame with carbon fiber tubing, and assembled Dynamixel 
+          motors with updated leg structures to house LiPo batteries. Wiring was completed through custom soldered connections and integration 
+          with a Raspberry Pi Zero running Ubuntu 22.04 and ROS2 Humble. For motion control, we developed low-level controllers and trained reinforcement 
+          learning agents in simulation using a URDF model of the robot. These models were deployed onto the hardware with optimized communication and asynchronous control.
         </p>
       </div>
 
       <div class="bg-white rounded-xl shadow p-6">
         <h3 class="text-xl font-bold mb-3">Results</h3>
         <p class="text-gray-700">
-          Completed full assembly of robot with integrated leg and wheel modulues, successfully
-          wired and connected all motors and sensors to Raspberry Pi, enabeling remote communications with 
-          delays as low as ~6-7ms
+        The RingBot was fully assembled and wired, with motors, sensors, and controllers functioning as intended. Remote communication delays were measured at ~6–7 ms, and inference 
+          speeds reached 2026 Hz on the Raspberry Pi and 20,066 Hz on the Steam Deck, far exceeding the 200 Hz requirement. Reinforcement learning models successfully executed standing and 
+          locomotion behaviors in simulation, demonstrating the potential for robust real world deployment. The project not only delivered a functional platform but also provided valuable 
+          experience in mechanical design, embedded systems, and machine learning for robotics.
         </p>
       </div>
     </section>
