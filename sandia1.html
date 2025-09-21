@@ -25,71 +25,37 @@
     <section class="mb-12">
       <h2 class="text-2xl md:text-3xl font-semibold mb-4">Overview</h2>
       <p class="text-gray-700 leading-relaxed max-w-3xl">
-        Counterfeit bolts pose serious risks in aerospace, defense, and industrial supply chains. They can look identical to 
-        authentic parts but often fail due to poor materials, improper heat treatment, or missing/false markings. Current detection 
-        methods are either destructive, inconsistent, or too costly for scalable use. Our project aims to create a nondestructive, 
-        portable system that combines optical inspection with simple non-optical tests (weight, resistance, magnetism) to reliably 
-        detect counterfeit bolts. The system must remain lightweight, compact, and able to evaluate a bolt in minutes.
+        Counterfeit bolts pose serious risks in aerospace, defense, and industrial supply chains. They can look
+        identical to authentic parts but often fail due to poor materials, improper heat treatment, or missing/false
+        markings. Current detection methods are either destructive, inconsistent, or too costly for scalable use.
+        Our project aims to create a <strong>nondestructive, portable system</strong> that combines optical inspection
+        with simple non-optical tests (weight, resistance, magnetism) to reliably detect counterfeit bolts. The system
+        must remain lightweight, compact, and able to evaluate a bolt in minutes.
       </p>
     </section>
 
     <!-- Proposed Design -->
     <section class="mb-12">
       <h2 class="text-2xl md:text-3xl font-semibold mb-4">Proposed Design</h2>
-      <p class="text-gray-700 leading-relaxed max-w-3xl">
-        Our design integrates optical imaging with a mechanical system to capture multiple bolt views while also measuring basic 
-        physical properties.
+      <p class="text-gray-700 leading-relaxed max-w-3xl mb-6">
+        Our design integrates <strong>optical imaging</strong> with a mechanical system to capture multiple bolt views
+        while also measuring basic physical properties.
       </p>
 
-      <div class="grid gap-6 md:grid-cols-2">
-        <!-- Left column -->
-        <div class="bg-white rounded-xl shadow p-6">
-          <h3 class="text-xl font-bold mb-3">Imaging & Data</h3>
-          <ul class="list-disc pl-5 space-y-2 text-gray-700">
-            
-            <li>Controlled lightbox with diffuse lighting; fixed camera distance and angle.</li>
-            <li>Multi-view captures (top, side, head markings, thread profile).</li>
-            <li>Reference target for color and scale normalization.</li>
-          </ul>
-          <h3 class="text-xl font-bold mt-6 mb-3">Preprocessing</h3>
-          <ul class="list-disc pl-5 space-y-2 text-gray-700">
-            <li>Background removal and pose alignment (fiducials/marker-based).</li>
-            <li>White balance, exposure normalization, and denoising.</li>
-            <li>ROI isolation: head markings, shank, threads.</li>
-          </ul>
-        </div>
+      <ul class="list-disc pl-5 space-y-2 text-gray-700 max-w-3xl">
+        <li><strong>Optical Inspection:</strong> Bolts are placed on a motorized turntable, and two fixed cameras
+        capture head markings, threads, and shank geometry under controlled lighting. Image data feeds into a
+        computer vision pipeline, where a pretrained CNN extracts feature maps and an anomaly detection algorithm
+        (PaDiM) compares them to authentic bolt distributions.</li>
 
-        <!-- Right column -->
-        <div class="bg-white rounded-xl shadow p-6">
-          <h3 class="text-xl font-bold mb-3">Features & Model</h3>
-          <ul class="list-disc pl-5 space-y-2 text-gray-700">
-            <li><span class="font-semibold">Geometric</span>: head flats, diameter, pitch, thread profile metrics.</li>
-            <li><span class="font-semibold">Marking</span>: OCR + template match for grade/manufacturer stamps.</li>
-            <li><span class="font-semibold">Surface</span>: texture/reflectance cues (LBP/GLCM) for material finish.</li>
-            <li>Baseline classifier (SVM/Random Forest) with confusion-matrix reporting.</li>
-            <li>Optional deep model (lightweight CNN or ViT) with data augmentation.</li>
-          </ul>
-          <h3 class="text-xl font-bold mt-6 mb-3">Evaluation</h3>
-          <ul class="list-disc pl-5 space-y-2 text-gray-700">
-            <li>Train/val/test split with stratification by lot and manufacturer.</li>
-            <li>Metrics: precision/recall, F1, ROC–AUC; threshold tuned for low false negatives.</li>
-            <li>Explainability via saliency/feature importance for auditability.</li>
-          </ul>
-        </div>
-      </div>
+        <li><strong>Non-Optical Tests:</strong> A digital scale measures weight, a magnetic probe detects alloy
+        variations, and resistance is recorded to catch abnormal compositions. These values are compared against
+        baselines established from authentic bolts.</li>
 
-      <!-- Small gallery strip (optional placeholders) -->
-      <div class="mt-8 grid gap-4 grid-cols-1 sm:grid-cols-3">
-        <div class="bg-white rounded-lg shadow p-4 flex items-center justify-center h-40">
-          <span class="text-sm text-gray-500">Lightbox Setup (placeholder)</span>
-        </div>
-        <div class="bg-white rounded-lg shadow p-4 flex items-center justify-center h-40">
-          <span class="text-sm text-gray-500">Head Markings ROI (placeholder)</span>
-        </div>
-        <div class="bg-white rounded-lg shadow p-4 flex items-center justify-center h-40">
-          <span class="text-sm text-gray-500">Thread Profile ROI (placeholder)</span>
-        </div>
-      </div>
+        <li><strong>Mechanical Structure:</strong> The setup uses T-slotted framing for modularity, stepper motors
+        for bolt rotation, and Raspberry Pi–based control with external cameras. The entire system fits within a
+        <em>12” × 12” × 12” cube</em> and weighs under <em>12 lbs</em>, meeting project constraints.</li>
+      </ul>
     </section>
 
     <!-- Future Work -->
@@ -97,10 +63,10 @@
       <h2 class="text-2xl md:text-3xl font-semibold mb-4">Future Work</h2>
       <ul class="list-disc pl-5 space-y-2 text-gray-700 max-w-3xl">
         <li>Collect larger, labeled datasets spanning multiple grades, finishes, and manufacturers.</li>
-        <li>Integrate 3D profiling (structured light or photogrammetry) for thread geometry verification.</li>
-        <li>Develop real-time inference on an embedded target (e.g., Jetson) with batch QA tooling.</li>
-        <li>Add anomaly detection to flag novel counterfeit patterns beyond trained classes.</li>
-        <li>Create operator UI: pass/fail dashboard, traceable reports, and lot-level analytics.</li>
+        <li>Fine-tune the CNN + anomaly detection pipeline for higher accuracy and lower false negatives.</li>
+        <li>Integrate real-time classification on the Raspberry Pi or a lightweight GPU board (e.g., Jetson).</li>
+        <li>Improve mechanical reliability of the turntable and screw-holding system for repeatable imaging.</li>
+        <li>Design a user interface that clearly outputs pass/fail results with traceable test data.</li>
       </ul>
     </section>
 
