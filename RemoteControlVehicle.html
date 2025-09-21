@@ -21,9 +21,11 @@
     <section class="mb-12">
       <h2 class="text-2xl md:text-3xl font-semibold mb-4">Overview</h2>
       <p class="text-gray-700 leading-relaxed max-w-3xl">
-        A three-speed remote control vehicle featuring an automatic transmission (low, high, reverse)
-        on a pickup-style chassis. The project explores mechanical design, linkage geometry, drivetrain
-        efficiency, and closed-loop control for smooth gear changes under varying loads.
+       The project focused on designing and building a compact remote-controlled car capable of performing across multiple events with both speed and precision. 
+        The drivetrain was engineered to provide smooth power delivery, directional changes, and gear shifting under varying loads. A three speed transmission—low, 
+        high, and reverse—was implemented to balance torque and velocity requirements. Shifting was achieved through a servo driven dog clutch actuated by a rack and pinion 
+        system, allowing reliable gear changes in real time. CAD modeling and FEA simulations guided the design, ensuring the drivetrain could withstand competition stresses while 
+        staying within strict size and cost constraints.
       </p>
     </section>
 
@@ -43,19 +45,21 @@
       <div class="bg-white rounded-xl shadow p-6">
         <h3 class="text-xl font-bold mb-3">What</h3>
         <p class="text-gray-700">
-          This project involved creating a remote controlled vehicle equipped with a three gear transmission:
-          Low, High, and Reverse. The vehicle features automatic gear shifting that is controlled through the remote,
-          allowing smooth transitions between gears without manual intervention. 
+         The main objective was to create a vehicle with a functional multi-speed automatic transmission that could handle diverse performance challenges. Forward motion was driven through high and low gears, while reverse was enabled by an idler gear. Key goals included:
+	      •	Delivering consistent torque with smooth gear engagement.
+	      •	Achieving high velocity for speed events and high torque for precision tasks.
+	      •	Maintaining reliable control under load without compromising traction.
+	      •	Meeting all dimensional, weight, and budget restrictions.
         </p>
       </div>
 
       <div class="bg-white rounded-xl shadow p-6">
         <h3 class="text-xl font-bold mb-3">How</h3>
         <p class="text-gray-700">
-          The vehicle was designed in <strong>Fusion 360</strong> to model the chassis and custom transmission components. 
-          We implemented a three-speed automatic transmission using a dog-clutch and servo-driven linkage, 
-          enabling low, high, and reverse gears. Finite Element Enalysis <strong>(FEA)</strong> was used to verify stress 
-          in key drivetrain parts, and the design was iterated for strength and weight reduction.
+          The drivetrain was designed in <strong>Fusion 360 </strong>and manufactured using a combination of laser-cut acrylic plates, 3D-printed PLA gears and housings, and metal D shafts for load transfer. Helical gears were chosen for smooth and quiet operation, while a servo actuated dog clutch 
+          enabled shifting between forward and reverse. The servo’s rotation was converted into translational motion through a rack and pinion linkage, allowing the clutch to slide into place and engage the selected gear. Extensive iteration was required to resolve challenges such as 
+          dog misalignment and poor meshing; custom acrylic spacers were added to ensure smoother engagement. Stress analysis was performed through <strong>Finite Element Analysis (FEA)</strong> in Fusion 360, confirming that the PLA transmission housing and gears remained well below yield stresses 
+          under expected torque. This iterative design process (combining CAD modeling, rapid prototyping, and simulation)ensured that the drivetrain was both functional and robust.
      
         </p>
       </div>
@@ -63,9 +67,9 @@
       <div class="bg-white rounded-xl shadow p-6">
         <h3 class="text-xl font-bold mb-3">Results</h3>
         <p class="text-gray-700">
-         The remote control vehicle was fully assembled with the three-speed transmission working as intended. The servo-driven 
-          dog-clutch shifted reliably between gears under load, with smooth transitions and minimal slip. FEA results matched physical 
-          performance, validating the design and showing that a compact automatic transmission can be effectively implemented at RC scale.
+         The completed car successfully demonstrated the viability of a small-scale automatic transmission system. The servo driven dog clutch provided reliable shifts between low, high, and reverse gears, allowing smooth transitions without excessive slip. Performance testing confirmed that 
+          the drivetrain produced sufficient torque for precision events and achieved competitive speeds in straight line runs. FEA predictions aligned closely with physical performance, validating the material and design choices. While some challenges arose such as weight from the metal D-shafts 
+          and difficulties in early gear meshing, iterative improvements addressed these issues. Ultimately, the vehicle met its performance goals and provided valuable hands on experience in CAD design, drivetrain integration, controls, and mechanical system iteration.
       
         </p>
       </div>
