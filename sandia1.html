@@ -61,16 +61,31 @@
         <img src="../assets/assembly.jpg" 
              alt="Proposed Bolt Detection System" 
              class="w-full h-64 object-contain mb-4"/>
-        <p class="text-gray-600 text-center">Proposed design of the counterfeit bolt detection system</p>
+        <p class="text-gray-600 text-center">Current design of the counterfeit bolt detection system</p>
+    <!-- Block 2: Optical Pipeline -->
+      <div class="bg-white rounded-xl shadow p-6">
+        <img src="../assets/optical_pipeline.jpg"
+             alt="Optical Inspection Pipeline"
+             class="w-full h-48 object-contain mb-4"/>
+        <p class="text-gray-600 text-center">Optical inspection pipeline for multi-view bolt imaging</p>
       </div>
-    </section>
+  
+      <!-- Block 3: Mechanical + Electrical Layout -->
+      <div class="bg-white rounded-xl shadow p-6">
+        <img src="../assets/mech_elec_layout.jpg"
+             alt="Mechanical and Electrical Layout"
+             class="w-full h-48 object-contain mb-4"/>
+        <p class="text-gray-600 text-center">Mechanical + electrical subsystem layout for integrated testing</p>
+      </div>
+  
+    </div>
+  </section>
 
     <!-- Future Work -->
     <section class="mb-12">
       <h2 class="text-2xl md:text-3xl font-semibold mb-4">Future Work</h2>
       <ul class="list-disc pl-5 space-y-2 text-gray-700 max-w-3xl">
-        <li>Collect larger, labeled datasets spanning multiple grades, finishes, and manufacturers.</li>
-        <li>Fine-tune the CNN + anomaly detection pipeline for higher accuracy and lower false negatives.</li>
+        <li>Make device fully automated from bolt loading to image bolt detection.</li>
         <li>Integrate real-time classification on the Raspberry Pi or a lightweight GPU board (e.g., Jetson).</li>
         <li>Improve mechanical reliability of the turntable and screw-holding system for repeatable imaging.</li>
         <li>Design a user interface that clearly outputs pass/fail results with traceable test data.</li>
