@@ -2,109 +2,115 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sandia Labs: Counterfeit Bolt Detection</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Suchir Sumant's Sandia National Laboratories capstone project combining mechanical design, controlled imaging, and computer vision for counterfeit fastener screening." />
+  <title>Sandia Labs Counterfeit Bolt Detection | Suchir Sumant</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50 text-gray-800">
-
-  <!-- Hero -->
+<body class="bg-gray-50 text-gray-800 font-sans">
   <header class="bg-white">
-    <div class="container mx-auto px-6 py-16 flex flex-col items-center text-center">
-      <img src="../assets/sandia_building.jpg" alt="Sandia National Laboratories" class="h-20 w-auto mb-6 object-contain" />
-      <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight">Sandia Labs: Counterfeit Bolt Detection</h1>
-      <p class="mt-4 text-gray-600 max-w-3xl">
-        Detecting counterfeit fasteners using imaging and machine learning.
-      </p>
+    <div class="max-w-6xl mx-auto px-6 pt-6">
+      <a href="index.html#projects" class="text-blue-600 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4">Back to Projects</a>
+    </div>
+    <div class="max-w-6xl mx-auto px-6 pt-12 pb-16 text-center">
+      <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
+        Sandia Labs<br class="hidden sm:block" /> Counterfeit Bolt Detection
+      </h1>
+      <p class="mt-4 text-lg text-gray-600">A portable inspection system for aerospace fasteners.</p>
+      <p class="mt-4 text-sm text-gray-600">Mechanical Engineering Capstone &middot; Aug 2025 &ndash; Jan 2026</p>
     </div>
   </header>
 
-  <main class="container mx-auto px-6 py-12">
-
+  <main class="max-w-6xl mx-auto px-6 py-12">
     <!-- Overview -->
-    <section class="mb-12">
-      <h2 class="text-2xl md:text-3xl font-semibold mb-4">Overview</h2>
-      <p class="text-gray-700 leading-relaxed max-w-3xl">
-        Counterfeit bolts pose serious risks in aerospace, defense, and industrial supply chains. They can look
-        identical to authentic parts but often fail due to poor materials, improper heat treatment, or missing/false
-        markings. Current detection methods are either destructive, inconsistent, or too costly for scalable use.
-        Our project aims to create a <strong>nondestructive, portable system</strong> that combines optical inspection
-        with simple non-optical tests (weight, resistance, magnetism) to reliably detect counterfeit bolts. The system
-        must remain lightweight, compact, and able to evaluate a bolt in minutes.
+    <section aria-labelledby="overview" class="mb-12">
+      <h2 id="overview" class="text-2xl md:text-3xl font-semibold mb-4">Overview</h2>
+      <p class="text-gray-700 leading-relaxed max-w-4xl">
+        For my mechanical engineering capstone with Sandia National Laboratories, our team developed
+        a compact, nondestructive prototype to screen aerospace fasteners for signs of counterfeiting.
+        I worked on the integrated CAD assembly, camera mounts, rotating fixture, and scale interface,
+        alongside the computer vision and validation workflow.
       </p>
     </section>
 
-    <!-- Proposed Design -->
-    <section class="mb-12">
-      <h2 class="text-2xl md:text-3xl font-semibold mb-4">Proposed Design</h2>
-      <p class="text-gray-700 leading-relaxed max-w-3xl mb-6">
-        Our design integrates <strong>optical imaging</strong> with a mechanical system to capture multiple bolt views
-        while also measuring basic physical properties.
-      </p>
+    <!-- Gallery -->
+    <section aria-labelledby="gallery" class="mb-12">
+      <h2 id="gallery" class="text-2xl md:text-3xl font-semibold mb-6">Gallery</h2>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+        <figure class="bg-white rounded-xl shadow p-5">
+          <video controls playsinline muted preload="metadata"
+                 poster="assets/sandia-demo-poster.jpg"
+                 width="720" height="1280"
+                 aria-label="Counterfeit bolt inspection prototype demonstration"
+                 aria-describedby="demo-caption"
+                 class="block mx-auto max-w-full rounded-lg bg-gray-950"
+                 style="width: min(100%, 19rem); height: auto; aspect-ratio: 9 / 16;">
+            <source src="assets/sandia-demo-1.5x.mp4" type="video/mp4" />
+            <a href="assets/sandia-demo-1.5x.mp4">Watch or download the prototype demonstration.</a>
+          </video>
+          <figcaption id="demo-caption" class="mt-4 text-center">
+            <p class="font-semibold">Prototype demonstration &middot; 1.5&times; speed</p>
+            <p class="mt-1 text-sm text-gray-600">Rotating fixture and controlled lighting in the assembled prototype.</p>
+          </figcaption>
+        </figure>
 
-      <ul class="list-disc pl-5 space-y-2 text-gray-700 max-w-3xl">
-        <li><strong>Optical Inspection:</strong> Bolts are placed on a motorized turntable, and two fixed cameras
-        capture head markings, threads, and shank geometry under controlled lighting. Image data feeds into a
-        computer vision pipeline, where a pretrained CNN extracts feature maps and an anomaly detection algorithm
-        (PaDiM) compares them to authentic bolt distributions.</li>
-
-        <li><strong>Non-Optical Tests:</strong> A digital scale measures weight, a magnetic probe detects alloy
-        variations, and resistance is recorded to catch abnormal compositions. These values are compared against
-        baselines established from authentic bolts.</li>
-
-        <li><strong>Mechanical Structure:</strong> The setup uses T-slotted framing for modularity, stepper motors
-        for bolt rotation, and Raspberry Pi–based control with external cameras. The entire system fits within a
-        <em>12” × 12” × 12” cube</em> and weighs under <em>12 lbs</em>, meeting project constraints.</li>
-      </ul>
-<!-- Three image blocks side-by-side -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-10">
-      
-        <!-- Block 1 -->
-        <div class="bg-white rounded-xl shadow p-6 w-full">
-          <img src="../assets/original_image_testing.jpg"
-               alt="Optical Pipeline"
-               class="w-full h-56 object-contain mb-4"/>
-          <p class="text-gray-600 text-center">Optical inspection 1st design iteration</p>
+        <div class="grid gap-4">
+          <figure class="bg-white rounded-xl shadow p-4">
+            <img src="assets/assembly.jpg" alt="CAD assembly showing the frame, camera mounts, lighting, and turntable" class="w-full h-60 object-contain" width="1046" height="1210" />
+            <figcaption class="mt-3 text-sm text-gray-600 text-center">Integrated assembly CAD</figcaption>
+          </figure>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <figure class="bg-white rounded-xl shadow p-4">
+              <img src="assets/original_image_testing.jpg" alt="First optical test setup used to develop the inspection system" class="w-full h-40 object-contain" loading="lazy" />
+              <figcaption class="mt-3 text-sm text-gray-600 text-center">Initial optical test setup</figcaption>
+            </figure>
+            <figure class="bg-white rounded-xl shadow p-4">
+              <img src="assets/intial_2.jpg" alt="Second optical inspection prototype" class="w-full h-40 object-contain" loading="lazy" />
+              <figcaption class="mt-3 text-sm text-gray-600 text-center">Second optical design iteration</figcaption>
+            </figure>
+          </div>
         </div>
-      
-        <!-- Block 2 -->
-        <div class="bg-white rounded-xl shadow p-6 w-full">
-          <img src="../assets/intial_2.jpg"
-               alt="Mechanical + Electrical Subsystem"
-               class="w-full h-56 object-contain mb-4"/>
-          <p class="text-gray-600 text-center">Optical inspection 2nd design iteration</p>
-        </div>
-        <!-- Block 3 -->
-        <div class="bg-white rounded-xl shadow p-6 w-full">
-          <img src="../assets/assembly.jpg"
-               alt="Proposed Bolt Detection System"
-               class="w-full h-56 object-contain mb-4"/>
-          <p class="text-gray-600 text-center">Current assembly of counterfeit bolt detection system</p>
-        </div>
-      
       </div>
     </section>
-    <!-- Future Work -->
-    <section class="mb-12">
-      <h2 class="text-2xl md:text-3xl font-semibold mb-4">Future Work</h2>
-      <ul class="list-disc pl-5 space-y-2 text-gray-700 max-w-3xl">
-        <li>Make device fully automated from bolt loading to image bolt detection.</li>
-        <li>Integrate real-time classification on the Raspberry Pi or a lightweight GPU board (e.g., Jetson).</li>
-        <li>Improve mechanical reliability of the turntable and screw-holding system for repeatable imaging.</li>
-        <li>Design a user interface that clearly outputs pass/fail results with traceable test data.</li>
-      </ul>
+
+    <!-- What / How / Results -->
+    <section aria-label="Project details" class="grid gap-6 grid-cols-1 md:grid-cols-3">
+      <div class="bg-white rounded-xl shadow p-6">
+        <h3 class="text-xl font-bold mb-3">What</h3>
+        <p class="text-gray-700 leading-relaxed">
+          Develop a portable, nondestructive screening tool for aerospace fasteners within a
+          12 &times; 12 &times; 12 in envelope. The system combines visual inspection and
+          weight measurement to evaluate bolts while preserving the parts for further testing.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow p-6">
+        <h3 class="text-xl font-bold mb-3">How</h3>
+        <p class="text-gray-700 leading-relaxed">
+          I designed camera mounts, a rotating fixture, and a scale interface as an integrated CAD assembly.
+          Controlled lighting and Raspberry Pi-based control supported image capture. A pretrained CNN
+          and PaDiM anomaly detection compared bolt images with reference data from authentic fasteners.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow p-6">
+        <h3 class="text-xl font-bold mb-3">Results</h3>
+        <p class="text-gray-700 leading-relaxed">
+          The computer vision pipeline achieved a 13-second fastener screening time during project testing.
+          We produced an integrated mechanical prototype and used data acquisition, calibration, and
+          validation tests to evaluate the imaging and weight verification workflow.
+        </p>
+      </div>
     </section>
 
-    <!-- Back link -->
     <div class="mt-12">
-      <a href="/" class="text-blue-600 hover:underline">&larr; Back to Projects</a>
+      <a href="index.html#projects" class="text-blue-600 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4">Back to Projects</a>
     </div>
-
   </main>
 
-  <footer class="bg-gray-200 py-6 mt-16">
-    <div class="container mx-auto px-6 text-center text-gray-600">
-      © 2025 Suchir Sumant. All rights reserved.
+  <footer class="bg-gray-200 py-6 mt-12">
+    <div class="max-w-6xl mx-auto px-6 text-center text-gray-600">
+      &copy; 2026 Suchir Sumant. All rights reserved.
     </div>
   </footer>
 </body>
